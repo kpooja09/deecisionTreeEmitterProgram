@@ -11,7 +11,7 @@ def decision_tree():
 	df = df.loc[(df['Proteins'] >= 0) & (df['Proteins'] < 11) & (df['Flour'] >= 0) & (df['Flour'] < 11) & (df['Oils'] >= 0) & (df['Oils'] < 11) &(df['Sugar'] >= 0) & (df['Sugar'] < 11)]
 	df = df[623:]
 	target ='None'
-	with open( "HW06_Kamble_Pooja_MyClassification.csv", 'w+') as wp:
+	with open( "MyClassification.csv", 'w+') as wp:
 		wp.write("RecipeType"+"\n" )
 		for ind, row in df.iterrows():
 			if( row['Flour'] <=4.9 ):

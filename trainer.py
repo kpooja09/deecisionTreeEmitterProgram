@@ -244,7 +244,7 @@ def get_entropy_and_threshold(each_val_target_freq):
 def rule_emitter(decision_tree, target, majority_class):
 	
 	# writine decision rules in .py file
-	file_writer = "HW06_Kamble_Pooja_classifier.py"
+	file_writer = "classifier.py"
 	f = open(file_writer,'+w')
 	
 	# importing python libraries
@@ -261,7 +261,7 @@ def rule_emitter(decision_tree, target, majority_class):
 	f.write("\tdf = df[623:]\n")
 
 	# Result file for target prediction
-	file_result = "HW06_Kamble_Pooja_MyClassification.csv"
+	file_result = "MyClassification.csv"
 
 	f.write("\ttarget =\'"+ str(majority_class)+"\'\n")
 	f.write("\twith open( \""+file_result+"\", 'w+') as wp:\n")
@@ -381,20 +381,20 @@ def main():
 		# genereate deciion rule file from decision tree made
 		elif(ch==2):
 			rule_emitter(decision_tree, target, majority_class)
-			print("\n\tHW06_Kamble_Pooja_classifier.py successfully generated..!")
+			print("\n\tclassifier.py successfully generated..!")
 
 		# Run the decision tree over training data
 		elif(ch == 3):
 			if (flag):
 				print("\n\n\tPlease execute the following command to run decision tree on the data,\n\t\t come back to check the accuracy!")
-				print("\n\tpython3 HW06_Kamble_Pooja_classifier.py\n")
+				print("\n\tpython3 classifier.py\n")
 				exit(0)
 			else:
 				print("Please train decision tree first!!")
 		
 		# check for accuracy of the decision tree 
 		elif(ch == 4):	
-			file_result = "HW06_Kamble_Pooja_MyClassification.csv"
+			file_result = "MyClassification.csv"
 			print("\n\t\tAccuracy for decision tree: ",calculate_accuracy(file_result, target, df[623:]),"%\n")
 
 		# loop till exit
